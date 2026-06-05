@@ -9,7 +9,11 @@ jobs:
 
         steps:
           - run: ls-la
+          
           - run: pwd
-          - uses: actions\checkout@v4
+
+          - uses: actions/checkout@v4
+
           - run: pwd
+
           - run: ls-la
