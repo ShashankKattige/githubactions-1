@@ -1,4 +1,4 @@
-name: First-workflow
+name: multiple-worklfow
 
 on:
     push
@@ -13,10 +13,15 @@ jobs:
         - name: install cowsay program
           run: sudo apt-get install cowsay -y
 
-
+    test_job:
+        runs-on: ubuntu-latest
+        steps:
         - name: Execute cowsay
           run: cowsay -f dragon "Run for cover, I m dragon " >> dragon.txt  
-
+    
+    deploy_job:
+        runs-on: ubuntu-latest
+        steps:
         - name: Test File Exists
           run: grep -i "dragon" dragon.txt
 
