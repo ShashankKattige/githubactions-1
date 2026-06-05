@@ -6,14 +6,15 @@ on:
 jobs:
     hello:
         runs-on: ubuntu-latest
-
         steps:
-          - run: ls -la
+        - name: Checkout REPO
+          uses: actions/checkout@v4
+        
+        - name: list and read repo
+          run: |
+            echo "My first double workflow"
+            ls - ltra
+            cat README.MD
 
-          - run: pwd
-
-          - uses: actions/checkout@v4
-
-          - run: pwd
-
-          - run: ls -la
+        - name: Generate ASCII Artwork
+          run: cowsay -f dragon "Run for cover, I m dragon " >> dragon.txt  
