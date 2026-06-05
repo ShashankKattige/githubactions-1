@@ -8,5 +8,8 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-          - name: say hello
-            run: echo "Hello Github , this is my second workflow"
+          - run: ls-la
+          - run: pwd
+          - uses: actions\checkout@v4
+          - run: pwd
+          - run: ls-la
